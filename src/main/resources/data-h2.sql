@@ -1,0 +1,1 @@
+INSERT INTO list_of_countries (id,country,locale,continent,capital) VALUES (DEFAULT,'Hungary','hu_HU','Europe','Budapest');

@@ -1,4 +1,4 @@
-package model;
+package io.git.models;
 
 public class Location {
 
