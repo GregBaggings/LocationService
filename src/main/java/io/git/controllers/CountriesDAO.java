@@ -21,8 +21,8 @@ public class CountriesDAO {
 		return countriesRepo.findAllByContinent(continent);
 	}
 
-	public void saveLocation(Country country) {
-		countriesRepo.save(country);
+	public void saveLocation(Country entry) {	
+		countriesRepo.save(entry);
 	}
 
 }

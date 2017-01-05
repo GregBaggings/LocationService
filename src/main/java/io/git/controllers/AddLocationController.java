@@ -17,7 +17,11 @@ public class AddLocationController {
 	public void saveLocation(@RequestParam(value = "continent") String continent,
 			@RequestParam(value = "locale") String locale, @RequestParam(value = "country") String country,
 			@RequestParam(value = "capital") String capital) {
-		dao.saveLocation(new Country());
+		Country entry = new Country();
+		entry.setCapital(capital);
+		entry.setContinent(continent);
+		entry.setCountry(country);
+		entry.setLocale(locale);
+		dao.saveLocation(entry);
 	}
-
 }
