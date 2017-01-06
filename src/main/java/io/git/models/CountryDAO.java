@@ -1,28 +1,37 @@
-package io.git.controllers;
+package io.git.models;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.git.models.Country;
-
 @RestController
-public class CountriesDAO {
+public class CountryDAO {
 
 	@Autowired
-	private CountriesRepository countriesRepo;
+	private CountryRepository countriesRepo;
 
 	public List<Country> findAll() {
 		return countriesRepo.findAll();
+	}
+
+	public List<Country> findCapitalByCountry(String country) {
+		return countriesRepo.findAllCapitalByCountry(country);
 	}
 
 	public List<Country> findByContinent(String continent) {
 		return countriesRepo.findAllByContinent(continent);
 	}
 
-	public void saveLocation(Country entry) {	
+	public void saveCountry(Country entry) {
 		countriesRepo.save(entry);
 	}
 
+	public void updateCountry(Country entry) {
+		countriesRepo.save(entry);
+	}
+
+	public void deleteCountry(int id) {
+		countriesRepo.delete(id);
+	}
 }

@@ -1,16 +1,17 @@
-package io.git.controllers;
+package io.git.models;
 
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import io.git.models.Country;
-
-public interface CountriesRepository extends CrudRepository<Country, Integer> {
+public interface CountryRepository extends CrudRepository<Country, Integer> {
 
 	List<Country> findAll();
 
 	List<Country> findAllByContinent(String continent);
+
+	List<Country> findAllCapitalByCountry(String country);
+	
 	
 	
 }

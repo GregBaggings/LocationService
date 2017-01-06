@@ -13,3 +13,4 @@ INSERT INTO countries (id,country,locale,continent,capital) VALUES ('12','Dennma
 INSERT INTO countries (id,country,locale,continent,capital) VALUES ('13','Italy','it_IT','Europe','Rome');
 INSERT INTO countries (id,country,locale,continent,capital) VALUES ('14','Ireland','en_IE','Europe','Dublin');
 INSERT INTO countries (id,country,locale,continent,capital) VALUES ('15','South Africa','en_ZA','Africa','Pretoria');
+INSERT INTO countries (id,country,locale,continent,capital) VALUES ('16','Turkey','TBD','Europe','-');

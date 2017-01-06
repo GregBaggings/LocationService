@@ -6,22 +6,26 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.git.models.Country;
+import io.git.models.CountryDAO;
 
 @RestController
-public class AddLocationController {
+public class UpdateCountryController {
 	
 	@Autowired
-	CountriesDAO dao;
+	CountryDAO dao;
 	
-	@RequestMapping("/addLocation")
+	@RequestMapping("/v1/updateCountry")
 	public void saveLocation(@RequestParam(value = "continent") String continent,
 			@RequestParam(value = "locale") String locale, @RequestParam(value = "country") String country,
 			@RequestParam(value = "capital") String capital) {
 		Country entry = new Country();
+		
+		//TODO: Check if Country exists => update it.
+		
 		entry.setCapital(capital);
 		entry.setContinent(continent);
 		entry.setCountry(country);
 		entry.setLocale(locale);
-		dao.saveLocation(entry);
+		dao.updateCountry(entry);
 	}
 }
