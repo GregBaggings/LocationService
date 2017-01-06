@@ -1,5 +1,9 @@
 package io.git.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.json.simple.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+import io.git.models.Country;
 import io.git.models.Location;
 
 @RestController
@@ -18,7 +23,7 @@ public class LocationListController {
 	@Autowired
 	@Qualifier("countriesDAO")
 	CountriesDAO dao;
-	
+
 	@RequestMapping("/capital")
 	@JsonInclude(JsonInclude.Include.NON_NULL)
 	public Location capital(@RequestParam(value = "country") String country) {
@@ -36,11 +41,14 @@ public class LocationListController {
 		return new Location(continent, locale, country, capital);
 	}
 
-	@RequestMapping(value="/listLocations/", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/listLocations/", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
-	public void listLocations() {
-		dao.findAll();
-	}
+	public JSONArray listLocations() {
+		List<Country> listOfCountries = new ArrayList<Country>();
+		listOfCountries.addAll(dao.findAll());
 
-	
+		JSONArray dbContentInJson = new JSONArray();
+		dbContentInJson.addAll(listOfCountries);
+		return dbContentInJson;
+	}
 }

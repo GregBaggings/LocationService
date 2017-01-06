@@ -1,4 +1,15 @@
-INSERT INTO countries (id,country,locale,continent,capital) VALUES ('1','Hungary','hu_HU','Europe','Budapest'),
-id,country,locale,continent,capital) VALUES ('2','Austria','au_AU','Europe','Wien'),
-id,country,locale,continent,capital) VALUES ('3','Germany','hu_HU','Europe','Berlin'),
-id,country,locale,continent,capital) VALUES ('4','England','hu_HU','Europe','London');
+INSERT INTO countries (id,country,locale,continent,capital) VALUES ('1','Hungary','hu_HU','Europe','Budapest');
+INSERT INTO countries (id,country,locale,continent,capital) VALUES ('2','Austria','au_AU','Europe','Wien');
+INSERT INTO countries (id,country,locale,continent,capital) VALUES ('3','Germany','de_DE','Europe','Berlin');
+INSERT INTO countries (id,country,locale,continent,capital) VALUES ('4','Japan','jp_JP','Asia','Tokyo');
+INSERT INTO countries (id,country,locale,continent,capital) VALUES ('5','USA','en_US','America','Washington');
+INSERT INTO countries (id,country,locale,continent,capital) VALUES ('6','Belarus','be_BY','Europe','Minsk');
+INSERT INTO countries (id,country,locale,continent,capital) VALUES ('7','Ukraine','uk_UA','Europe','Kiev');
+INSERT INTO countries (id,country,locale,continent,capital) VALUES ('8','Belgium','nl_BE','Europe','Brussel');
+INSERT INTO countries (id,country,locale,continent,capital) VALUES ('9','France','fr_FR','Europe','Paris');
+INSERT INTO countries (id,country,locale,continent,capital) VALUES ('10','Greece','el_GR','Europe','Athen');
+INSERT INTO countries (id,country,locale,continent,capital) VALUES ('11','Iceland','en_IE','Europe','Reykjavík');
+INSERT INTO countries (id,country,locale,continent,capital) VALUES ('12','Dennmark','da_DK','Europe','Copenhagen');
+INSERT INTO countries (id,country,locale,continent,capital) VALUES ('13','Italy','it_IT','Europe','Rome');
+INSERT INTO countries (id,country,locale,continent,capital) VALUES ('14','Ireland','en_IE','Europe','Dublin');
+INSERT INTO countries (id,country,locale,continent,capital) VALUES ('15','South Africa','en_ZA','Africa','Pretoria');
