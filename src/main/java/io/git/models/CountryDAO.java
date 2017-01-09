@@ -34,4 +34,8 @@ public class CountryDAO {
 	public void deleteCountry(int id) {
 		countriesRepo.delete(id);
 	}
+
+	public Country findByID(int id) {
+		return countriesRepo.findOne(id);
+	}
 }
