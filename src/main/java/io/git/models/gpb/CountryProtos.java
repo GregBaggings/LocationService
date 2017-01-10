@@ -4,7 +4,7 @@
 package io.git.models.gpb;
 
 public final class CountryProtos {
-  private CountryProtos() {}
+  public CountryProtos() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }

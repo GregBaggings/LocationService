@@ -12,6 +12,4 @@ public interface CountryRepository extends CrudRepository<Country, Integer> {
 
 	List<Country> findAllCapitalByCountry(String country);
 	
-	
-	
 }
