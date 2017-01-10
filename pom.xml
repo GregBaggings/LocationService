@@ -51,7 +51,7 @@
 			<artifactId>protobuf-java-format</artifactId>
 			<version>1.4</version>
 		</dependency>
-		
+
 
 		<!-- JSON -->
 		<dependency>
@@ -65,6 +65,11 @@
 			<groupId>com.jayway.restassured</groupId>
 			<artifactId>rest-assured</artifactId>
 			<version>2.9.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<version>2.4.5</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>

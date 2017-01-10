@@ -47,7 +47,6 @@ public class Application {
     @Bean
     CountryGBPRepository GBPRepository() {
 		return null;
-    	
     }
 	
 	public static void main(String[] args) {
