@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.git.models.Country;
-import io.git.models.CountryDAO;
+import io.git.models.json.Country;
+import io.git.models.json.CountryDAO;
 
 @RestController
 public class AddCountryController {

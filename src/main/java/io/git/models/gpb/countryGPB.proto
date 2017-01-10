@@ -1,0 +1,14 @@
+package io.git.models.gpb;
+
+option java_package = "io.git.models.gpb";
+option java_outer_classname = "CountryProtos";
+
+message Country{
+
+required string country=1;
+required string continent=2;
+required string capital=3;
+required string locale=4;
+
+
+}

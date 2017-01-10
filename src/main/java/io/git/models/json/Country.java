@@ -1,4 +1,4 @@
-package io.git.models;
+package io.git.models.json;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
