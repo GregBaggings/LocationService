@@ -53,6 +53,7 @@ _Endpoint:_ /loc-svc/v1/listCountries/ <br />
 **Capital Service:**<br />
 _Endpoint:_ /loc-svc/v1/capital/ <br />
 _Path parameter:_
+
 Parameter name | Type
 ------------ | -------------
 continent | String

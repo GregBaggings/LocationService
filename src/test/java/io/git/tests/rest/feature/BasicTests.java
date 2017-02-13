@@ -13,9 +13,9 @@ import java.util.Map;
 
 public class BasicTests {
 
-	public static final String ADD_COUNTRY_ENDPOINT= "http://localhost:8080/loc-svc/v1/addCountry";
-	public static final String LIST_COUNTRIES_ENDPOINT= "http://localhost:8080/loc-svc/v1/listCountries/";
-	public static final String CAPITAL_OF_COUNTRY_ENDPOINT= "http://localhost:8080/loc-svc/v1/capital/{country}";
+	public static final String ADD_COUNTRY_ENDPOINT= "http://localhost:8090/loc-svc/v1/addCountry";
+	public static final String LIST_COUNTRIES_ENDPOINT= "http://localhost:8090/loc-svc/v1/listCountries/";
+	public static final String CAPITAL_OF_COUNTRY_ENDPOINT= "http://localhost:8090/loc-svc/v1/capital/{country}";
 	public static final int CORRECT_STATUS_CODE= 200;
 	
 	@Test
