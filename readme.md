@@ -1,6 +1,6 @@
 # Location Service
 
-This project is about to try out Spring Boot with Google Protocol Buffers and JSON background.
+This project is about to try out Spring Boot with JSON background and to create a full test lifecycle for it.
 
 ---
 
