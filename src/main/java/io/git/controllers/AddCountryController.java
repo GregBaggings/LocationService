@@ -2,9 +2,12 @@ package io.git.controllers;
 
 import java.util.List;
 
+import org.json.simple.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,9 +22,10 @@ public class AddCountryController {
 
 	@Autowired
 	CountryDAO dao;
+	JSONObject result = new JSONObject();
 
 	@RequestMapping("/v1/addCountry")
-	public void saveLocation(@RequestParam(value = "continent") String continent, @RequestParam(value = "locale") String locale,
+	public ResponseEntity<?> saveLocation(@RequestParam(value = "continent") String continent, @RequestParam(value = "locale") String locale,
 			@RequestParam(value = "country") String country, @RequestParam(value = "capital") String capital) {
 		Country entry = new Country();
 		entry.setCapital(capital);
@@ -30,11 +34,15 @@ public class AddCountryController {
 		entry.setLocale(locale);
 
 		List<Country> dbContent = dao.findAll();
-		LOGGER.debug("Items in the DB are: "+dbContent);
+		result.clear();
+
+		LOGGER.debug("Items in the DB are: " + dbContent);
 		if (dbContent.toString().contains(entry.getCountry())) {
-			
-			throw new Error(entry.getCountry() + " is already in the Database, in the table of Countries.");
+			result.put("Error Message", entry.getCountry() + " is already in the Database, in the table of Countries.");
+			return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
 		}
 		dao.saveCountry(entry);
+		result.put("Result", "OK");
+		return new ResponseEntity<>(result, HttpStatus.OK);
 	}
 }
