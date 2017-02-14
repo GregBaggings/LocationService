@@ -21,16 +21,16 @@ public class BasicTests {
 	@Test
 	public void addCountryTest(){
 		Map <String, String> params = new HashMap<>();
-		params.put("country", "Finnland");
-		params.put("capital", "Helsinki");
-		params.put("continent", "Europe");
-		params.put("locale", "fi_FI");
+		params.put("country", "Russia");
+		params.put("capital", "Moscow");
+		params.put("continent", "Asia");
+		params.put("locale", "ru_RU");
 		
 		given().when().parameters(params).expect().statusCode(CORRECT_STATUS_CODE).then().get(ADD_COUNTRY_ENDPOINT);
 		Response respCheck = given().when().parameters(params).expect().statusCode(200).then().get(LIST_COUNTRIES_ENDPOINT);
 		
 		System.out.println("The response is: "+ respCheck.asString());
-		assertThat(respCheck.asString(), containsString("Finnland"));
+		assertThat(respCheck.asString(), containsString("Moscow"));
 	}
 	
 	@Test
