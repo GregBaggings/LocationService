@@ -8,8 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CountryDAO {
 
-	@Autowired
 	private CountryRepository countriesRepo;
+	
+	@Autowired
+	public CountryDAO(CountryRepository countriesRepo) {
+		super();
+		this.countriesRepo = countriesRepo;
+	}
 
 	public List<Country> findAll() {
 		return countriesRepo.findAll();

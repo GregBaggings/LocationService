@@ -102,13 +102,28 @@
 						</goals>
 						<configuration>
 							<rules>
-								<rule implementation="org.jacoco.maven.RuleConfiguration">
+								<rule>
 									<element>BUNDLE</element>
 									<limits>
-										<limit implementation="org.jacoco.report.check.Limit">
+										<limit>
 											<counter>COMPLEXITY</counter>
 											<value>COVEREDRATIO</value>
-											<minimum>0.10</minimum>
+											<minimum>0.50</minimum>
+										</limit>
+									</limits>
+								</rule>
+								<rule>
+									<element>CLASS</element>
+									<excludes>
+										<exclude>*Test</exclude>
+										<exclude>*Application</exclude>
+										<exclude>*UpdateCountryController</exclude>
+									</excludes>
+									<limits>
+										<limit>
+											<counter>LINE</counter>
+											<value>COVEREDRATIO</value>
+											<minimum>0.50</minimum>
 										</limit>
 									</limits>
 								</rule>
