@@ -16,9 +16,9 @@ import org.slf4j.LoggerFactory;
 
 import com.jayway.restassured.response.Response;
 
-public class BasicTests {
+public class BasicTestsIT {
 
-	public static Logger LOGGER = LoggerFactory.getLogger(BasicTests.class);
+	public static Logger LOGGER = LoggerFactory.getLogger(BasicTestsIT.class);
 
 	public static final String ADD_COUNTRY_ENDPOINT = "http://localhost:8090/loc-svc/v1/addCountry";
 	public static final String LIST_COUNTRIES_ENDPOINT = "http://localhost:8090/loc-svc/v1/listCountries/";
@@ -27,7 +27,7 @@ public class BasicTests {
 
 	@Before
 	public void setup() {
-		MDC.put("testClassName", BasicTests.class.getSimpleName());
+		MDC.put("testClassName", BasicTestsIT.class.getSimpleName());
 	}
 
 	@Test
@@ -62,10 +62,11 @@ public class BasicTests {
 	@Test
 	public void capitalOfHungaryTest() {
 		String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
-		LOGGER.info("------ Step1. - Call the service for test: " + methodName + " ------");
 
 		Map<String, String> params = new HashMap<>();
 		params.put("country", "Hungary");
+
+		LOGGER.info("------ Step1. - Call the service for test: " + methodName + " ------");
 
 		Response resp = given().when().pathParameters(params).expect().statusCode(CORRECT_STATUS_CODE).then().get(CAPITAL_OF_COUNTRY_ENDPOINT);
 		LOGGER.info("The response is: " + resp.asString());
