@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<appender name="SIFT" class="ch.qos.logback.classic.sift.SiftingAppender">
+
+		<discriminator>
+			<key>testClassName</key>
+			<defaultValue>...</defaultValue>
+		</discriminator>
+
+		<sift>
+			<appender name="FILE-${testClassName}" class="ch.qos.logback.core.FileAppender">
+				<file>${testClassName}.log</file>
+				<append>false</append>
+				<layout class="ch.qos.logback.classic.PatternLayout">
+					<pattern>%d %level %logger{35} - %msg%n</pattern>
+				</layout>
+			</appender>
+		</sift>
+	</appender>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder 
+			by default -->
+		<encoder>
+			<pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<root level="INFO">
+		<appender-ref ref="SIFT" />
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>
